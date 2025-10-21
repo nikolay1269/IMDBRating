@@ -16,6 +16,9 @@ struct ContentView: View {
         List {
             ForEach(viewModel.loadedTitles, id: \.id) { title in
                 
+                let isElemLast = viewModel.loadedTitles.needToLoad(title)
+                let isLoading = isElemLast && viewModel.canLoad == false
+                
                 HStack(alignment: .center) {
                     if let urlString = title.primaryImage?.url, let url = URL(string: urlString) {
                         CachedAsyncImage(url: url).frame(width: 100, height: 100)
@@ -28,6 +31,12 @@ struct ContentView: View {
                             Text("\(Duration.seconds(lengthInSecond).formatted(.time(pattern: .hourMinuteSecond)))")
                         } else {
                             Text("Year: N/A")
+                        }
+                    }
+                    .progressBar(isLoading: isLoading)
+                    .onAppear {
+                        if isElemLast {
+                            viewModel.loadNext()
                         }
                     }
                 }
