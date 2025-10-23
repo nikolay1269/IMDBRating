@@ -107,7 +107,9 @@ open class RequestBuilder<T>: @unchecked Sendable, Identifiable {
                     }
                 }
             } onCancel: {
-                requestTask.cancel()
+                MainActor.assumeIsolated {
+                    requestTask.cancel()
+                }
             }
         } catch {
             if let errorResponse = error as? ErrorResponse {
@@ -134,3 +136,4 @@ public protocol RequestBuilderFactory {
     func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type
     func getBuilder<T: Decodable>() -> RequestBuilder<T>.Type
 }
+
