@@ -26,11 +26,16 @@ struct ContentView: View {
                     Spacer()
                     VStack {
                         Text(title.originalTitle ?? "No title available").frame(maxWidth: .infinity)
-                        if let year = title.startYear { Text("Year: \(year, format: .number.grouping(.never))") } else { Text("Year: N/A") }
-                        if let lengthInSecond = title.runtimeSeconds {
-                            Text("\(Duration.seconds(lengthInSecond).formatted(.time(pattern: .hourMinuteSecond)))")
-                        } else {
-                            Text("Year: N/A")
+                        HStack {
+                            if let year = title.startYear { Text("\(year, format: .number.grouping(.never))") } else { Text("Year: N/A") }
+                            if let lengthInSecond = title.runtimeSeconds {
+                                Text("\(Duration.seconds(lengthInSecond).formatted(.time(pattern: .hourMinute)))")
+                            } else {
+                                Text("Duration: N/A")
+                            }
+                            if let formattedVoteCount = title.rating?.voteCount?.formatted(.number.notation(.compactName).precision(.fractionLength(1))) {
+                                Text("\(title.rating?.aggregateRating ?? 0, specifier: "%.1f") (\(formattedVoteCount))")
+                            }
                         }
                     }
                     .progressBar(isLoading: isLoading)
