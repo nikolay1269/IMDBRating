@@ -29,9 +29,10 @@ struct ContentView: View {
                         HStack {
                             if let year = title.startYear { Text("\(year, format: .number.grouping(.never))") } else { Text("Year: N/A") }
                             if let lengthInSecond = title.runtimeSeconds {
-                                Text("\(Duration.seconds(lengthInSecond).formatted(.time(pattern: .hourMinute)))")
+                                let interval = TimeInterval(lengthInSecond)
+                                Text(interval.formatDuration() ?? "")
                             } else {
-                                Text("Duration: N/A")
+                                Text("N/A")
                             }
                             if let formattedVoteCount = title.rating?.voteCount?.formatted(.number.notation(.compactName).precision(.fractionLength(1))) {
                                 Text("\(title.rating?.aggregateRating ?? 0, specifier: "%.1f") (\(formattedVoteCount))")

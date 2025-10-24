@@ -7,7 +7,7 @@
 import Foundation
 
 extension TimeInterval {
-    func formatDuration(from timeInterval: TimeInterval) -> String? {
+    func formatDuration() -> String? {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute] // Specify the units to display
         formatter.unitsStyle = .abbreviated // Options include .abbreviated, .short, and .full
@@ -15,6 +15,6 @@ extension TimeInterval {
         // Set padding for single-digit units (e.g., "05h 02m")
         formatter.zeroFormattingBehavior = .pad
         
-        return formatter.string(from: timeInterval)
+        return formatter.string(from: self)
     }
 }
