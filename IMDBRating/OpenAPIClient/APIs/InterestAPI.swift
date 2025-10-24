@@ -17,8 +17,9 @@ open class InterestAPI {
      - returns: ImdbapiInterest
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceGetInterest(interestId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiInterest {
-        return try await iMDbAPIServiceGetInterestWithRequestBuilder(interestId: interestId, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceGetInterest(interestId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiInterest {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceGetInterestWithRequestBuilder(interestId: interestId, apiConfiguration: config).execute().body
     }
 
     /**
@@ -57,8 +58,9 @@ open class InterestAPI {
      - returns: ImdbapiListListInterestCategoriesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListInterestCategories(apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListListInterestCategoriesResponse {
-        return try await iMDbAPIServiceListInterestCategoriesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListInterestCategories(apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListListInterestCategoriesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListInterestCategoriesWithRequestBuilder(apiConfiguration: config).execute().body
     }
 
     /**
@@ -86,3 +88,4 @@ open class InterestAPI {
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
 }
+

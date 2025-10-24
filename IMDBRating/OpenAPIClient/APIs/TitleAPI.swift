@@ -17,8 +17,9 @@ open class TitleAPI {
      - returns: ImdbapiBatchGetTitlesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceBatchGetTitles(titleIds: [String], apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiBatchGetTitlesResponse {
-        return try await iMDbAPIServiceBatchGetTitlesWithRequestBuilder(titleIds: titleIds, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceBatchGetTitles(titleIds: [String], apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiBatchGetTitlesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceBatchGetTitlesWithRequestBuilder(titleIds: titleIds, apiConfiguration: config).execute().body
     }
 
     /**
@@ -58,8 +59,9 @@ open class TitleAPI {
      - returns: ImdbapiTitle
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceGetTitle(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiTitle {
-        return try await iMDbAPIServiceGetTitleWithRequestBuilder(titleId: titleId, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceGetTitle(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiTitle {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceGetTitleWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
 
     /**
@@ -99,8 +101,9 @@ open class TitleAPI {
      - returns: ImdbapiBoxOffice
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceGetTitleBoxOffice(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiBoxOffice {
-        return try await iMDbAPIServiceGetTitleBoxOfficeWithRequestBuilder(titleId: titleId, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceGetTitleBoxOffice(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiBoxOffice {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceGetTitleBoxOfficeWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
 
     /**
@@ -140,8 +143,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleAKAsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleAKAs(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleAKAsResponse {
-        return try await iMDbAPIServiceListTitleAKAsWithRequestBuilder(titleId: titleId, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleAKAs(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleAKAsResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleAKAsWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
 
     /**
@@ -183,8 +187,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleAwardNominationsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleAwardNominations(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleAwardNominationsResponse {
-        return try await iMDbAPIServiceListTitleAwardNominationsWithRequestBuilder(titleId: titleId, pageSize: pageSize, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleAwardNominations(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleAwardNominationsResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleAwardNominationsWithRequestBuilder(titleId: titleId, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -230,8 +235,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleCertificatesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleCertificates(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleCertificatesResponse {
-        return try await iMDbAPIServiceListTitleCertificatesWithRequestBuilder(titleId: titleId, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleCertificates(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleCertificatesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleCertificatesWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
 
     /**
@@ -274,8 +280,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleCompanyCreditsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleCompanyCredits(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleCompanyCreditsResponse {
-        return try await iMDbAPIServiceListTitleCompanyCreditsWithRequestBuilder(titleId: titleId, categories: categories, pageSize: pageSize, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleCompanyCredits(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleCompanyCreditsResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleCompanyCreditsWithRequestBuilder(titleId: titleId, categories: categories, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -326,8 +333,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleCreditsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleCredits(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleCreditsResponse {
-        return try await iMDbAPIServiceListTitleCreditsWithRequestBuilder(titleId: titleId, categories: categories, pageSize: pageSize, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleCredits(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleCreditsResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleCreditsWithRequestBuilder(titleId: titleId, categories: categories, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -378,8 +386,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleEpisodesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleEpisodes(titleId: String, season: String? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleEpisodesResponse {
-        return try await iMDbAPIServiceListTitleEpisodesWithRequestBuilder(titleId: titleId, season: season, pageSize: pageSize, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleEpisodes(titleId: String, season: String? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleEpisodesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleEpisodesWithRequestBuilder(titleId: titleId, season: season, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -430,8 +439,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleImagesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleImages(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleImagesResponse {
-        return try await iMDbAPIServiceListTitleImagesWithRequestBuilder(titleId: titleId, types: types, pageSize: pageSize, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleImages(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleImagesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleImagesWithRequestBuilder(titleId: titleId, types: types, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -479,8 +489,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleParentsGuideResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleParentsGuide(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleParentsGuideResponse {
-        return try await iMDbAPIServiceListTitleParentsGuideWithRequestBuilder(titleId: titleId, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleParentsGuide(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleParentsGuideResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleParentsGuideWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
 
     /**
@@ -522,8 +533,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleReleaseDatesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleReleaseDates(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleReleaseDatesResponse {
-        return try await iMDbAPIServiceListTitleReleaseDatesWithRequestBuilder(titleId: titleId, pageSize: pageSize, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleReleaseDates(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleReleaseDatesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleReleaseDatesWithRequestBuilder(titleId: titleId, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -569,8 +581,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleSeasonsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleSeasons(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleSeasonsResponse {
-        return try await iMDbAPIServiceListTitleSeasonsWithRequestBuilder(titleId: titleId, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleSeasons(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleSeasonsResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleSeasonsWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
 
     /**
@@ -613,8 +626,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitleVideosResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleVideos(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitleVideosResponse {
-        return try await iMDbAPIServiceListTitleVideosWithRequestBuilder(titleId: titleId, types: types, pageSize: pageSize, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitleVideos(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleVideosResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitleVideosWithRequestBuilder(titleId: titleId, types: types, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -709,8 +723,9 @@ open class TitleAPI {
      - returns: ImdbapiListTitlesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitles(types: [Types_iMDbAPIServiceListTitles]? = nil, genres: [String]? = nil, countryCodes: [String]? = nil, languageCodes: [String]? = nil, nameIds: [String]? = nil, interestIds: [String]? = nil, startYear: Int? = nil, endYear: Int? = nil, minVoteCount: Int? = nil, maxVoteCount: Int? = nil, minAggregateRating: Float? = nil, maxAggregateRating: Float? = nil, sortBy: SortBy_iMDbAPIServiceListTitles? = nil, sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiListTitlesResponse {
-        return try await iMDbAPIServiceListTitlesWithRequestBuilder(types: types, genres: genres, countryCodes: countryCodes, languageCodes: languageCodes, nameIds: nameIds, interestIds: interestIds, startYear: startYear, endYear: endYear, minVoteCount: minVoteCount, maxVoteCount: maxVoteCount, minAggregateRating: minAggregateRating, maxAggregateRating: maxAggregateRating, sortBy: sortBy, sortOrder: sortOrder, pageToken: pageToken, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceListTitles(types: [Types_iMDbAPIServiceListTitles]? = nil, genres: [String]? = nil, countryCodes: [String]? = nil, languageCodes: [String]? = nil, nameIds: [String]? = nil, interestIds: [String]? = nil, startYear: Int? = nil, endYear: Int? = nil, minVoteCount: Int? = nil, maxVoteCount: Int? = nil, minAggregateRating: Float? = nil, maxAggregateRating: Float? = nil, sortBy: SortBy_iMDbAPIServiceListTitles? = nil, sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitlesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceListTitlesWithRequestBuilder(types: types, genres: genres, countryCodes: countryCodes, languageCodes: languageCodes, nameIds: nameIds, interestIds: interestIds, startYear: startYear, endYear: endYear, minVoteCount: minVoteCount, maxVoteCount: maxVoteCount, minAggregateRating: minAggregateRating, maxAggregateRating: maxAggregateRating, sortBy: sortBy, sortOrder: sortOrder, pageToken: pageToken, apiConfiguration: config).execute().body
     }
 
     /**
@@ -779,8 +794,9 @@ open class TitleAPI {
      - returns: ImdbapiSearchTitlesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceSearchTitles(query: String, limit: Int? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) async throws(ErrorResponse) -> ImdbapiSearchTitlesResponse {
-        return try await iMDbAPIServiceSearchTitlesWithRequestBuilder(query: query, limit: limit, apiConfiguration: apiConfiguration).execute().body
+    open class func iMDbAPIServiceSearchTitles(query: String, limit: Int? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiSearchTitlesResponse {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
+        return try await iMDbAPIServiceSearchTitlesWithRequestBuilder(query: query, limit: limit, apiConfiguration: config).execute().body
     }
 
     /**
