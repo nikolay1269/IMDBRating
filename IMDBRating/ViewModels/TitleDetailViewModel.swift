@@ -11,4 +11,9 @@ import Combine
 class TitleDetailViewModel: ObservableObject {
     
     @Published var loadedTitle: ImdbapiTitle?
+    
+    func loadTitleDetail(id: String) async {
+        
+        loadedTitle = try? await TitleAPI.iMDbAPIServiceGetTitle(titleId: id)
+    }
 }

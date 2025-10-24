@@ -19,19 +19,8 @@ struct MovieListItemViewq: View {
             }
             Spacer()
             VStack {
-                Text(title.originalTitle ?? "No title available").frame(maxWidth: .infinity)
-                HStack {
-                    if let year = title.startYear { Text("\(year, format: .number.grouping(.never))") } else { Text("Year: N/A") }
-                    if let lengthInSecond = title.runtimeSeconds {
-                        let interval = TimeInterval(lengthInSecond)
-                        Text(interval.formatDuration() ?? "")
-                    } else {
-                        Text("N/A")
-                    }
-                    if let formattedVoteCount = title.rating?.voteCount?.formatted(.number.notation(.compactName).precision(.fractionLength(1))) {
-                        Text("\(title.rating?.aggregateRating ?? 0, specifier: "%.1f") (\(formattedVoteCount))")
-                    }
-                }
+                Text(title.primaryTitle ?? "No title available").frame(maxWidth: .infinity)
+                MovieBaseInfoView(title: title)
             }
             .progressBar(isLoading: isLoading)
         }
