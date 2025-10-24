@@ -207,8 +207,8 @@ open class TitleAPI {
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -300,8 +300,8 @@ open class TitleAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "categories": (wrappedValue: categories?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -352,8 +352,8 @@ open class TitleAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "categories": (wrappedValue: categories?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -403,9 +403,9 @@ open class TitleAPI {
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "season": (wrappedValue: season?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "season": (wrappedValue: [season].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -456,8 +456,8 @@ open class TitleAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "types": (wrappedValue: types?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -546,8 +546,8 @@ open class TitleAPI {
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -639,8 +639,8 @@ open class TitleAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "types": (wrappedValue: types?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -748,15 +748,15 @@ open class TitleAPI {
             "languageCodes": (wrappedValue: languageCodes?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
             "nameIds": (wrappedValue: nameIds?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
             "interestIds": (wrappedValue: interestIds?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "startYear": (wrappedValue: startYear?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "endYear": (wrappedValue: endYear?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "minVoteCount": (wrappedValue: minVoteCount?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "maxVoteCount": (wrappedValue: maxVoteCount?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "minAggregateRating": (wrappedValue: minAggregateRating?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "maxAggregateRating": (wrappedValue: maxAggregateRating?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "sortBy": (wrappedValue: sortBy?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "sortOrder": (wrappedValue: sortOrder?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "startYear": (wrappedValue: [startYear].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "endYear": (wrappedValue: [endYear].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "minVoteCount": (wrappedValue: [minVoteCount].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "maxVoteCount": (wrappedValue: [maxVoteCount].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "minAggregateRating": (wrappedValue: [minAggregateRating].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "maxAggregateRating": (wrappedValue: [maxAggregateRating].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "sortBy": (wrappedValue: [sortBy].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "sortOrder": (wrappedValue: [sortOrder].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -799,8 +799,8 @@ open class TitleAPI {
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "query": (wrappedValue: query.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "limit": (wrappedValue: limit?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "query": (wrappedValue: [query].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "limit": (wrappedValue: [limit].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [

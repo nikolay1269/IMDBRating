@@ -128,8 +128,8 @@ open class NameAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "categories": (wrappedValue: categories?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -180,8 +180,8 @@ open class NameAPI {
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
             "types": (wrappedValue: types?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -270,8 +270,8 @@ open class NameAPI {
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "pageSize": (wrappedValue: pageSize?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageSize": (wrappedValue: [pageSize].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
@@ -312,7 +312,7 @@ open class NameAPI {
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "pageToken": (wrappedValue: pageToken?.asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
+            "pageToken": (wrappedValue: [pageToken].asParameter(codableHelper: apiConfiguration.codableHelper), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: (any Sendable)?] = [
