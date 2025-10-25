@@ -60,7 +60,12 @@ open class RequestBuilder<T>: @unchecked Sendable, Identifiable {
     /// Optional block to obtain a reference to the request's progress instance when available.
     public var onProgressReady: ((Progress) -> Void)?
 
-    required public init(method: String, URLString: String, parameters: [String: any Sendable]?, headers: [String: String] = [:], requiresAuthentication: Bool, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) {
+    required public init(method: String,
+                         URLString: String,
+                         parameters: [String: any Sendable]?,
+                         headers: [String: String] = [:],
+                         requiresAuthentication: Bool,
+                         apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) {
         self.method = method
         self.URLString = URLString
         self.parameters = parameters

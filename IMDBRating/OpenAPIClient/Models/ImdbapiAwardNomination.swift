@@ -7,7 +7,8 @@
 
 import Foundation
 
-/** AwardNomination represents a nomination for an award.  The unique identifier for the award nomination.   string id &#x3D; 1  [(google.api.field_visibility).restriction &#x3D; \&quot;INTERNAL\&quot;]; */
+/** AwardNomination represents a nomination for an award.  The unique identifier for the award nomination.   string id &#x3D; 1
+ [(google.api.field_visibility).restriction &#x3D; \&quot;INTERNAL\&quot;]; */
 public struct ImdbapiAwardNomination: Sendable, Codable, ParameterConvertible, Hashable {
 
     /** The titles associated with the award nomination. */
@@ -26,7 +27,14 @@ public struct ImdbapiAwardNomination: Sendable, Codable, ParameterConvertible, H
     /** The rank of the winner in the nomination. */
     public var winnerRank: Int?
 
-    public init(titles: [ImdbapiTitle]? = nil, nominees: [ImdbapiName]? = nil, event: ImdbapiEvent? = nil, year: Int? = nil, text: String? = nil, category: String? = nil, isWinner: Bool? = nil, winnerRank: Int? = nil) {
+    public init(titles: [ImdbapiTitle]? = nil,
+                nominees: [ImdbapiName]? = nil,
+                event: ImdbapiEvent? = nil,
+                year: Int? = nil,
+                text: String? = nil,
+                category: String? = nil,
+                isWinner: Bool? = nil,
+                winnerRank: Int? = nil) {
         self.titles = titles
         self.nominees = nominees
         self.event = event

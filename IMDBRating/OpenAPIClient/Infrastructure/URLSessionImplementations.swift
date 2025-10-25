@@ -71,7 +71,12 @@ fileprivate class URLSessionRequestBuilderConfiguration: @unchecked Sendable {
 
 open class URLSessionRequestBuilder<T>: RequestBuilder<T>, @unchecked Sendable {
 
-    required public init(method: String, URLString: String, parameters: [String: any Sendable]?, headers: [String: String] = [:], requiresAuthentication: Bool, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) {
+    required public init(method: String,
+                         URLString: String,
+                         parameters: [String: any Sendable]?,
+                         headers: [String: String] = [:],
+                         requiresAuthentication: Bool,
+                         apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) {
         super.init(method: method, URLString: URLString, parameters: parameters, headers: headers, requiresAuthentication: requiresAuthentication, apiConfiguration: apiConfiguration)
     }
 
@@ -228,7 +233,12 @@ open class URLSessionRequestBuilder<T>: RequestBuilder<T>, @unchecked Sendable {
         }
     }
 
-    private func retryRequest(urlRequest: URLRequest, urlSession: URLSessionProtocol, statusCode: Int, data: Data?, response: URLResponse?, error: Error, completion: @Sendable @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
+    private func retryRequest(urlRequest: URLRequest,
+                              urlSession: URLSessionProtocol,
+                              statusCode: Int, data: Data?,
+                              response: URLResponse?,
+                              error: Error,
+                              completion: @Sendable @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
         self.apiConfiguration.interceptor.retry(urlRequest: urlRequest, urlSession: urlSession, requestBuilder: self, data: data, response: response, error: error) { retry in
             switch retry {
             case .retry:
@@ -242,7 +252,11 @@ open class URLSessionRequestBuilder<T>: RequestBuilder<T>, @unchecked Sendable {
         }
     }
 
-    fileprivate func processRequestResponse(urlRequest: URLRequest, data: Data?, httpResponse: HTTPURLResponse, error: Error?, completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
+    fileprivate func processRequestResponse(urlRequest: URLRequest,
+                                            data: Data?,
+                                            httpResponse: HTTPURLResponse,
+                                            error: Error?,
+                                            completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
 
         switch T.self {
         case is Void.Type:
@@ -320,7 +334,11 @@ open class URLSessionRequestBuilder<T>: RequestBuilder<T>, @unchecked Sendable {
 }
 
 open class URLSessionDecodableRequestBuilder<T: Decodable>: URLSessionRequestBuilder<T>, @unchecked Sendable {
-    override fileprivate func processRequestResponse(urlRequest: URLRequest, data: Data?, httpResponse: HTTPURLResponse, error: Error?, completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
+    override fileprivate func processRequestResponse(urlRequest: URLRequest,
+                                                     data: Data?,
+                                                     httpResponse: HTTPURLResponse,
+                                                     error: Error?,
+                                                     completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void) {
 
         switch T.self {
         case is String.Type:
@@ -398,7 +416,10 @@ open class URLSessionDecodableRequestBuilder<T: Decodable>: URLSessionRequestBui
 }
 
 fileprivate final class SessionDelegate: NSObject, URLSessionTaskDelegate {
-    func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    func urlSession(_ session: URLSession,
+                    task: URLSessionTask,
+                    didReceive challenge: URLAuthenticationChallenge,
+                    completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
 
         var disposition: URLSession.AuthChallengeDisposition = .performDefaultHandling
 
@@ -407,7 +428,8 @@ fileprivate final class SessionDelegate: NSObject, URLSessionTaskDelegate {
         if challenge.previousFailureCount > 0 {
             disposition = .rejectProtectionSpace
         } else {
-            credential = URLSessionRequestBuilderConfiguration.shared.credentialStore[task.taskIdentifier] ?? session.configuration.urlCredentialStorage?.defaultCredential(for: challenge.protectionSpace)
+            credential = URLSessionRequestBuilderConfiguration.shared.credentialStore[task.taskIdentifier] ??
+            session.configuration.urlCredentialStorage?.defaultCredential(for: challenge.protectionSpace)
 
             if credential != nil {
                 disposition = .useCredential
@@ -687,7 +709,8 @@ private class OctetStreamEncoding: ParameterEncoding {
 private extension Data {
     /// Append string to Data
     ///
-    /// Rather than littering my code with calls to `dataUsingEncoding` to convert strings to Data, and then add that data to the Data, this wraps it in a nice convenient little extension to Data. This converts using UTF-8.
+    /// Rather than littering my code with calls to `dataUsingEncoding` to convert strings to Data, and then
+    /// add that data to the Data, this wraps it in a nice convenient little extension to Data. This converts using UTF-8.
     ///
     /// - parameter string:       The string to be added to the `Data`.
 
@@ -714,7 +737,13 @@ public enum OpenAPIInterceptorRetry {
 public protocol OpenAPIInterceptor {
     func intercept<T>(urlRequest: URLRequest, urlSession: URLSessionProtocol, requestBuilder: RequestBuilder<T>, completion: @escaping (Result<URLRequest, Error>) -> Void)
 
-    func retry<T>(urlRequest: URLRequest, urlSession: URLSessionProtocol, requestBuilder: RequestBuilder<T>, data: Data?, response: URLResponse?, error: Error, completion: @escaping (OpenAPIInterceptorRetry) -> Void)
+    func retry<T>(urlRequest: URLRequest,
+                  urlSession: URLSessionProtocol,
+                  requestBuilder: RequestBuilder<T>,
+                  data: Data?,
+                  response: URLResponse?,
+                  error: Error,
+                  completion: @escaping (OpenAPIInterceptorRetry) -> Void)
 }
 
 public class DefaultOpenAPIInterceptor: OpenAPIInterceptor {
@@ -724,7 +753,13 @@ public class DefaultOpenAPIInterceptor: OpenAPIInterceptor {
         completion(.success(urlRequest))
     }
     
-    public func retry<T>(urlRequest: URLRequest, urlSession: URLSessionProtocol, requestBuilder: RequestBuilder<T>, data: Data?, response: URLResponse?, error: Error, completion: @escaping (OpenAPIInterceptorRetry) -> Void) {
+    public func retry<T>(urlRequest: URLRequest,
+                         urlSession: URLSessionProtocol,
+                         requestBuilder: RequestBuilder<T>,
+                         data: Data?,
+                         response: URLResponse?,
+                         error: Error,
+                         completion: @escaping (OpenAPIInterceptorRetry) -> Void) {
         completion(.dontRetry)
     }
 }

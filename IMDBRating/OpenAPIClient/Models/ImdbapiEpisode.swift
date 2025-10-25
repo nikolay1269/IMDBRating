@@ -19,7 +19,15 @@ public struct ImdbapiEpisode: Sendable, Codable, ParameterConvertible, Hashable 
     public var rating: ImdbapiRating?
     public var releaseDate: ImdbapiPrecisionDate?
 
-    public init(id: String? = nil, title: String? = nil, primaryImage: ImdbapiImage? = nil, season: String? = nil, episodeNumber: Int? = nil, runtimeSeconds: Int? = nil, plot: String? = nil, rating: ImdbapiRating? = nil, releaseDate: ImdbapiPrecisionDate? = nil) {
+    public init(id: String? = nil,
+                title: String? = nil,
+                primaryImage: ImdbapiImage? = nil,
+                season: String? = nil,
+                episodeNumber: Int? = nil,
+                runtimeSeconds: Int? = nil,
+                plot: String? = nil,
+                rating: ImdbapiRating? = nil,
+                releaseDate: ImdbapiPrecisionDate? = nil) {
         self.id = id
         self.title = title
         self.primaryImage = primaryImage

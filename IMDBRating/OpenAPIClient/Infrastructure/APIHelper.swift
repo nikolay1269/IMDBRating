@@ -39,8 +39,8 @@ public struct APIHelper {
 
         return source.reduce(into: [String: any Sendable]()) { result, item in
             switch item.value {
-            case let x as Bool:
-                result[item.key] = x.description
+            case let itemValue as Bool:
+                result[item.key] = itemValue.description
             default:
                 result[item.key] = item.value
             }

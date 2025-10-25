@@ -7,7 +7,12 @@
 
 import Foundation
 
-/** ParentsGuideCategory defines the categories for the Parents Guide.   - SEXUAL_CONTENT: Sex &amp; Nudity  - VIOLENCE: Violence &amp; Gore  - PROFANITY: Profanity  - ALCOHOL_DRUGS: Alcohol, Drugs &amp; Smoking  - FRIGHTENING_INTENSE_SCENES: Frightening &amp; Intense Scenes */
+/** ParentsGuideCategory defines the categories for the Parents Guide.
+ - SEXUAL_CONTENT: Sex &amp; Nudity
+ - VIOLENCE: Violence &amp; Gore
+ - PROFANITY: Profanity
+ - ALCOHOL_DRUGS: Alcohol, Drugs &amp; Smoking
+ - FRIGHTENING_INTENSE_SCENES: Frightening &amp; Intense Scenes */
 public enum ImdbapiParentsGuideCategory: String, Sendable, Codable, CaseIterable {
     case sexualContent = "SEXUAL_CONTENT"
     case violence = "VIOLENCE"

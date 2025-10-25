@@ -7,7 +7,15 @@
 
 import Foundation
 
-/** TitleType defines the type of title in the IMDb API.   - MOVIE: Represents a movie title.  - TV_SERIES: Represents a TV series title.  - TV_MINI_SERIES: Represents a TV mini-series title.  - TV_SPECIAL: Represents a TV special title.  - TV_MOVIE: Represents a TV movie title.  - SHORT: Represents a short title.  - VIDEO: Represents a video title.  - VIDEO_GAME: Represents a video game title. */
+/** TitleType defines the type of title in the IMDb API.
+ - MOVIE: Represents a movie title.
+ - TV_SERIES: Represents a TV series title.
+ - TV_MINI_SERIES: Represents a TV mini-series title.
+ - TV_SPECIAL: Represents a TV special title.
+ - TV_MOVIE: Represents a TV movie title.
+ - SHORT: Represents a short title.
+ - VIDEO: Represents a video title.
+ - VIDEO_GAME: Represents a video game title. */
 public enum ImdbapiTitleType: String, Sendable, Codable, CaseIterable {
     case movie = "MOVIE"
     case tvSeries = "TV_SERIES"

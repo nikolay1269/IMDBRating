@@ -26,7 +26,14 @@ public struct ImdbapiVideo: Sendable, Codable, ParameterConvertible, Hashable {
     /** The runtime of the video in seconds. */
     public var runtimeSeconds: Int?
 
-    public init(id: String? = nil, type: String? = nil, name: String? = nil, primaryImage: ImdbapiImage? = nil, description: String? = nil, width: Int? = nil, height: Int? = nil, runtimeSeconds: Int? = nil) {
+    public init(id: String? = nil,
+                type: String? = nil,
+                name: String? = nil,
+                primaryImage: ImdbapiImage? = nil,
+                description: String? = nil,
+                width: Int? = nil,
+                height: Int? = nil,
+                runtimeSeconds: Int? = nil) {
         self.id = id
         self.type = type
         self.name = name

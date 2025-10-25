@@ -30,7 +30,9 @@ open class NameAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiBatchGetNamesResponse> 
      */
-    open class func iMDbAPIServiceBatchGetNamesWithRequestBuilder(nameIds: [String], apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiBatchGetNamesResponse> {
+    open class func iMDbAPIServiceBatchGetNamesWithRequestBuilder(nameIds: [String],
+                                                                  apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+                                                                                                        -> RequestBuilder<ImdbapiBatchGetNamesResponse> {
         let localVariablePath = "/names:batchGet"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -48,7 +50,12 @@ open class NameAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiBatchGetNamesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -90,7 +97,12 @@ open class NameAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiName>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -98,13 +110,18 @@ open class NameAPI {
      
      - parameter nameId: (path) Required. IMDB name ID in the format \&quot;nm1234567\&quot;. 
      - parameter categories: (query) Optional. The categories of credits to filter by. If not specified, all categories are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.
+     The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListNameFilmographyResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListNameFilmography(nameId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListNameFilmographyResponse {
+    open class func iMDbAPIServiceListNameFilmography(nameId: String,
+                                                      categories: [String]? = nil,
+                                                      pageSize: Int? = nil,
+                                                      pageToken: String? = nil,
+                                                      apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListNameFilmographyResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListNameFilmographyWithRequestBuilder(nameId: nameId, categories: categories, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -115,12 +132,18 @@ open class NameAPI {
      - Retrieve the filmography associated with a specific name.
      - parameter nameId: (path) Required. IMDB name ID in the format \&quot;nm1234567\&quot;. 
      - parameter categories: (query) Optional. The categories of credits to filter by. If not specified, all categories are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.
+     The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListNameFilmographyResponse> 
      */
-    open class func iMDbAPIServiceListNameFilmographyWithRequestBuilder(nameId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListNameFilmographyResponse> {
+    open class func iMDbAPIServiceListNameFilmographyWithRequestBuilder(nameId: String,
+                                                                        categories: [String]? = nil,
+                                                                        pageSize: Int? = nil,
+                                                                        pageToken: String? = nil,
+                                                                        apiConfiguration: OpenAPIClientAPIConfiguration
+                                                                        = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListNameFilmographyResponse> {
         var localVariablePath = "/names/{nameId}/filmography"
         let nameIdPreEscape = "\(APIHelper.mapValueToPathItem(nameId))"
         let nameIdPostEscape = nameIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -143,7 +166,12 @@ open class NameAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListNameFilmographyResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -151,13 +179,18 @@ open class NameAPI {
      
      - parameter nameId: (path) Required. IMDB name ID in the format \&quot;nm1234567\&quot;. 
      - parameter types: (query) Optional. The types of images to filter by. If not specified, all types are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of images to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of images to return per page. If not specified, a default value will be used.
+     The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListNameImagesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListNameImages(nameId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListNameImagesResponse {
+    open class func iMDbAPIServiceListNameImages(nameId: String,
+                                                 types: [String]? = nil,
+                                                 pageSize: Int? = nil,
+                                                 pageToken: String? = nil,
+                                                 apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListNameImagesResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListNameImagesWithRequestBuilder(nameId: nameId, types: types, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -168,12 +201,18 @@ open class NameAPI {
      - Retrieve the images associated with a specific name.
      - parameter nameId: (path) Required. IMDB name ID in the format \&quot;nm1234567\&quot;. 
      - parameter types: (query) Optional. The types of images to filter by. If not specified, all types are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of images to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of images to return per page. If not specified, a default value will be used.
+     The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListNameImagesResponse> 
      */
-    open class func iMDbAPIServiceListNameImagesWithRequestBuilder(nameId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListNameImagesResponse> {
+    open class func iMDbAPIServiceListNameImagesWithRequestBuilder(nameId: String,
+                                                                   types: [String]? = nil,
+                                                                   pageSize: Int? = nil,
+                                                                   pageToken: String? = nil,
+                                                                   apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+                                                                    -> RequestBuilder<ImdbapiListNameImagesResponse> {
         var localVariablePath = "/names/{nameId}/images"
         let nameIdPreEscape = "\(APIHelper.mapValueToPathItem(nameId))"
         let nameIdPostEscape = nameIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -196,7 +235,12 @@ open class NameAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListNameImagesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -220,7 +264,9 @@ open class NameAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListNameRelationshipsResponse> 
      */
-    open class func iMDbAPIServiceListNameRelationshipsWithRequestBuilder(nameId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListNameRelationshipsResponse> {
+    open class func iMDbAPIServiceListNameRelationshipsWithRequestBuilder(nameId: String,
+                                                                          apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+                                                                            -> RequestBuilder<ImdbapiListNameRelationshipsResponse> {
         var localVariablePath = "/names/{nameId}/relationships"
         let nameIdPreEscape = "\(APIHelper.mapValueToPathItem(nameId))"
         let nameIdPostEscape = nameIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -238,20 +284,29 @@ open class NameAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListNameRelationshipsResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
      List trivia for a name
      
      - parameter nameId: (path) Required. IMDB name ID in the format \&quot;nm1234567\&quot;. 
-     - parameter pageSize: (query) Optional. The maximum number of trivia entries to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of trivia entries to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListNameTriviaResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListNameTrivia(nameId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListNameTriviaResponse {
+    open class func iMDbAPIServiceListNameTrivia(nameId: String,
+                                                 pageSize: Int? = nil,
+                                                 pageToken: String? = nil,
+                                                 apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListNameTriviaResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListNameTriviaWithRequestBuilder(nameId: nameId, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -261,12 +316,17 @@ open class NameAPI {
      - GET /names/{nameId}/trivia
      - Retrieve the trivia associated with a specific name.
      - parameter nameId: (path) Required. IMDB name ID in the format \&quot;nm1234567\&quot;. 
-     - parameter pageSize: (query) Optional. The maximum number of trivia entries to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of trivia entries to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListNameTriviaResponse> 
      */
-    open class func iMDbAPIServiceListNameTriviaWithRequestBuilder(nameId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListNameTriviaResponse> {
+    open class func iMDbAPIServiceListNameTriviaWithRequestBuilder(nameId: String,
+                                                                   pageSize: Int? = nil,
+                                                                   pageToken: String? = nil,
+                                                                   apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+                                                                    -> RequestBuilder<ImdbapiListNameTriviaResponse> {
         var localVariablePath = "/names/{nameId}/trivia"
         let nameIdPreEscape = "\(APIHelper.mapValueToPathItem(nameId))"
         let nameIdPostEscape = nameIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -288,7 +348,12 @@ open class NameAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListNameTriviaResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -312,7 +377,9 @@ open class NameAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListStarMetersResponse> 
      */
-    open class func iMDbAPIServiceListStarMetersWithRequestBuilder(pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListStarMetersResponse> {
+    open class func iMDbAPIServiceListStarMetersWithRequestBuilder(pageToken: String? = nil,
+                                                                   apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+                                                                    -> RequestBuilder<ImdbapiListStarMetersResponse> {
         let localVariablePath = "/chart/starmeter"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -330,7 +397,12 @@ open class NameAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListStarMetersResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 }
 

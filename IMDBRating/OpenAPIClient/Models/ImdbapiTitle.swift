@@ -45,7 +45,25 @@ public struct ImdbapiTitle: Sendable, Codable, ParameterConvertible, Hashable {
     /** The list of interests associated with the title. */
     public var interests: [ImdbapiInterest]?
 
-    public init(id: String? = nil, type: String? = nil, isAdult: Bool? = nil, primaryTitle: String? = nil, originalTitle: String? = nil, primaryImage: ImdbapiImage? = nil, startYear: Int? = nil, endYear: Int? = nil, runtimeSeconds: Int? = nil, genres: [String]? = nil, rating: ImdbapiRating? = nil, metacritic: ImdbapiMetacritic? = nil, plot: String? = nil, directors: [ImdbapiName]? = nil, writers: [ImdbapiName]? = nil, stars: [ImdbapiName]? = nil, originCountries: [ImdbapiCountry]? = nil, spokenLanguages: [ImdbapiLanguage]? = nil, interests: [ImdbapiInterest]? = nil) {
+    public init(id: String? = nil,
+                type: String? = nil,
+                isAdult: Bool? = nil,
+                primaryTitle: String? = nil,
+                originalTitle: String? = nil,
+                primaryImage: ImdbapiImage? = nil,
+                startYear: Int? = nil,
+                endYear: Int? = nil,
+                runtimeSeconds: Int? = nil,
+                genres: [String]? = nil,
+                rating: ImdbapiRating? = nil,
+                metacritic: ImdbapiMetacritic? = nil,
+                plot: String? = nil,
+                directors: [ImdbapiName]? = nil,
+                writers: [ImdbapiName]? = nil,
+                stars: [ImdbapiName]? = nil,
+                originCountries: [ImdbapiCountry]? = nil,
+                spokenLanguages: [ImdbapiLanguage]? = nil,
+                interests: [ImdbapiInterest]? = nil) {
         self.id = id
         self.type = type
         self.isAdult = isAdult

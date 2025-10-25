@@ -7,7 +7,8 @@
 
 import Foundation
 
-/** The NameMeterRanking message represents the IMDb popularity meter ranking for a person, including their current rank, change direction, and difference from the previous measurement. This ranking is used to indicate the popularity of the person over time. */
+/** The NameMeterRanking message represents the IMDb popularity meter ranking for a person, including their current rank, change direction, and difference from the previous measurement.
+ This ranking is used to indicate the popularity of the person over time. */
 public struct ImdbapiNameMeterRanking: Sendable, Codable, ParameterConvertible, Hashable {
 
     /** The current rank of the person in the IMDb popularity meter. */

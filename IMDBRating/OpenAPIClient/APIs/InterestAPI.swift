@@ -17,7 +17,8 @@ open class InterestAPI {
      - returns: ImdbapiInterest
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceGetInterest(interestId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiInterest {
+    open class func iMDbAPIServiceGetInterest(interestId: String,
+                                              apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiInterest {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceGetInterestWithRequestBuilder(interestId: interestId, apiConfiguration: config).execute().body
     }
@@ -30,7 +31,8 @@ open class InterestAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiInterest> 
      */
-    open class func iMDbAPIServiceGetInterestWithRequestBuilder(interestId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiInterest> {
+    open class func iMDbAPIServiceGetInterestWithRequestBuilder(interestId: String,
+                                                                apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiInterest> {
         var localVariablePath = "/interests/{interestId}"
         let interestIdPreEscape = "\(APIHelper.mapValueToPathItem(interestId))"
         let interestIdPostEscape = interestIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -48,7 +50,12 @@ open class InterestAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiInterest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -70,9 +77,10 @@ open class InterestAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListListInterestCategoriesResponse> 
      */
-    open class func iMDbAPIServiceListInterestCategoriesWithRequestBuilder(apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListListInterestCategoriesResponse> {
+    open class func iMDbAPIServiceListInterestCategoriesWithRequestBuilder(apiConfiguration: OpenAPIClientAPIConfiguration? = nil) -> RequestBuilder<ImdbapiListListInterestCategoriesResponse> {
+        let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         let localVariablePath = "/interests"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableURLString = config.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
@@ -83,9 +91,14 @@ open class InterestAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<ImdbapiListListInterestCategoriesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<ImdbapiListListInterestCategoriesResponse>.Type = config.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: config)
     }
 }
 

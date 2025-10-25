@@ -17,7 +17,8 @@ open class TitleAPI {
      - returns: ImdbapiBatchGetTitlesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceBatchGetTitles(titleIds: [String], apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiBatchGetTitlesResponse {
+    open class func iMDbAPIServiceBatchGetTitles(titleIds: [String],
+                                                 apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiBatchGetTitlesResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceBatchGetTitlesWithRequestBuilder(titleIds: titleIds, apiConfiguration: config).execute().body
     }
@@ -30,7 +31,9 @@ open class TitleAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiBatchGetTitlesResponse> 
      */
-    open class func iMDbAPIServiceBatchGetTitlesWithRequestBuilder(titleIds: [String], apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiBatchGetTitlesResponse> {
+    open class func iMDbAPIServiceBatchGetTitlesWithRequestBuilder(titleIds: [String],
+                                                                   apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiBatchGetTitlesResponse> {
         let localVariablePath = "/titles:batchGet"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -48,7 +51,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiBatchGetTitlesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -59,7 +67,8 @@ open class TitleAPI {
      - returns: ImdbapiTitle
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceGetTitle(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiTitle {
+    open class func iMDbAPIServiceGetTitle(titleId: String,
+                                           apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiTitle {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceGetTitleWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
@@ -90,7 +99,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiTitle>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -101,7 +115,8 @@ open class TitleAPI {
      - returns: ImdbapiBoxOffice
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceGetTitleBoxOffice(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiBoxOffice {
+    open class func iMDbAPIServiceGetTitleBoxOffice(titleId: String,
+                                                    apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiBoxOffice {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceGetTitleBoxOfficeWithRequestBuilder(titleId: titleId, apiConfiguration: config).execute().body
     }
@@ -114,7 +129,8 @@ open class TitleAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiBoxOffice> 
      */
-    open class func iMDbAPIServiceGetTitleBoxOfficeWithRequestBuilder(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiBoxOffice> {
+    open class func iMDbAPIServiceGetTitleBoxOfficeWithRequestBuilder(titleId: String,
+                                                                      apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiBoxOffice> {
         var localVariablePath = "/titles/{titleId}/boxOffice"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -132,7 +148,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiBoxOffice>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -156,7 +177,9 @@ open class TitleAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleAKAsResponse> 
      */
-    open class func iMDbAPIServiceListTitleAKAsWithRequestBuilder(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleAKAsResponse> {
+    open class func iMDbAPIServiceListTitleAKAsWithRequestBuilder(titleId: String,
+                                                                  apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleAKAsResponse> {
         var localVariablePath = "/titles/{titleId}/akas"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -174,20 +197,29 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleAKAsResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
      List award nominations for a title
      
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
-     - parameter pageSize: (query) Optional. The maximum number of award nominations to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of award nominations to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitleAwardNominationsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleAwardNominations(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleAwardNominationsResponse {
+    open class func iMDbAPIServiceListTitleAwardNominations(titleId: String,
+                                                            pageSize: Int? = nil,
+                                                            pageToken: String? = nil,
+                                                            apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleAwardNominationsResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListTitleAwardNominationsWithRequestBuilder(titleId: titleId, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -197,12 +229,17 @@ open class TitleAPI {
      - GET /titles/{titleId}/awardNominations
      - Retrieve the award nominations associated with a specific title.
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
-     - parameter pageSize: (query) Optional. The maximum number of award nominations to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of award nominations to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleAwardNominationsResponse> 
      */
-    open class func iMDbAPIServiceListTitleAwardNominationsWithRequestBuilder(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleAwardNominationsResponse> {
+    open class func iMDbAPIServiceListTitleAwardNominationsWithRequestBuilder(titleId: String,
+                                                                              pageSize: Int? = nil,
+                                                                              pageToken: String? = nil,
+                                                                              apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleAwardNominationsResponse> {
         var localVariablePath = "/titles/{titleId}/awardNominations"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -224,7 +261,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleAwardNominationsResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -248,7 +290,9 @@ open class TitleAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleCertificatesResponse> 
      */
-    open class func iMDbAPIServiceListTitleCertificatesWithRequestBuilder(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleCertificatesResponse> {
+    open class func iMDbAPIServiceListTitleCertificatesWithRequestBuilder(titleId: String,
+                                                                          apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleCertificatesResponse> {
         var localVariablePath = "/titles/{titleId}/certificates"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -266,7 +310,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleCertificatesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -274,15 +323,24 @@ open class TitleAPI {
      
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter categories: (query) Optional. The categories of company credits to filter by. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of company credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of company credits to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitleCompanyCreditsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleCompanyCredits(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleCompanyCreditsResponse {
+    open class func iMDbAPIServiceListTitleCompanyCredits(titleId: String,
+                                                          categories: [String]? = nil,
+                                                          pageSize: Int? = nil,
+                                                          pageToken: String? = nil,
+                                                          apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleCompanyCreditsResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
-        return try await iMDbAPIServiceListTitleCompanyCreditsWithRequestBuilder(titleId: titleId, categories: categories, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
+        return try await iMDbAPIServiceListTitleCompanyCreditsWithRequestBuilder(titleId: titleId,
+                                                                                 categories: categories,
+                                                                                 pageSize: pageSize,
+                                                                                 pageToken: pageToken,
+                                                                                 apiConfiguration: config).execute().body
     }
 
     /**
@@ -291,12 +349,18 @@ open class TitleAPI {
      - Retrieve the company credits associated with a specific title.
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter categories: (query) Optional. The categories of company credits to filter by. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of company credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of company credits to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleCompanyCreditsResponse> 
      */
-    open class func iMDbAPIServiceListTitleCompanyCreditsWithRequestBuilder(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleCompanyCreditsResponse> {
+    open class func iMDbAPIServiceListTitleCompanyCreditsWithRequestBuilder(titleId: String,
+                                                                            categories: [String]? = nil,
+                                                                            pageSize: Int? = nil,
+                                                                            pageToken: String? = nil,
+                                                                            apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleCompanyCreditsResponse> {
         var localVariablePath = "/titles/{titleId}/companyCredits"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -319,7 +383,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleCompanyCreditsResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -327,13 +396,18 @@ open class TitleAPI {
      
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter categories: (query) Optional. The categories of credits to filter by. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of credits to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitleCreditsResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleCredits(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleCreditsResponse {
+    open class func iMDbAPIServiceListTitleCredits(titleId: String,
+                                                   categories: [String]? = nil,
+                                                   pageSize: Int? = nil,
+                                                   pageToken: String? = nil,
+                                                   apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleCreditsResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListTitleCreditsWithRequestBuilder(titleId: titleId, categories: categories, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -344,12 +418,18 @@ open class TitleAPI {
      - Retrieve the credits associated with a specific title.
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter categories: (query) Optional. The categories of credits to filter by. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of credits to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleCreditsResponse> 
      */
-    open class func iMDbAPIServiceListTitleCreditsWithRequestBuilder(titleId: String, categories: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleCreditsResponse> {
+    open class func iMDbAPIServiceListTitleCreditsWithRequestBuilder(titleId: String,
+                                                                     categories: [String]? = nil,
+                                                                     pageSize: Int? = nil,
+                                                                     pageToken: String? = nil,
+                                                                     apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleCreditsResponse> {
         var localVariablePath = "/titles/{titleId}/credits"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -372,7 +452,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleCreditsResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -380,13 +465,18 @@ open class TitleAPI {
      
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter season: (query) Optional. The season number to filter episodes by. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of episodes to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of episodes to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitleEpisodesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleEpisodes(titleId: String, season: String? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleEpisodesResponse {
+    open class func iMDbAPIServiceListTitleEpisodes(titleId: String,
+                                                    season: String? = nil,
+                                                    pageSize: Int? = nil,
+                                                    pageToken: String? = nil,
+                                                    apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleEpisodesResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListTitleEpisodesWithRequestBuilder(titleId: titleId, season: season, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -397,12 +487,18 @@ open class TitleAPI {
      - Retrieve the episodes associated with a specific title.
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter season: (query) Optional. The season number to filter episodes by. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of episodes to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of episodes to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleEpisodesResponse> 
      */
-    open class func iMDbAPIServiceListTitleEpisodesWithRequestBuilder(titleId: String, season: String? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleEpisodesResponse> {
+    open class func iMDbAPIServiceListTitleEpisodesWithRequestBuilder(titleId: String,
+                                                                      season: String? = nil,
+                                                                      pageSize: Int? = nil,
+                                                                      pageToken: String? = nil,
+                                                                      apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleEpisodesResponse> {
         var localVariablePath = "/titles/{titleId}/episodes"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -425,7 +521,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleEpisodesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -433,13 +534,18 @@ open class TitleAPI {
      
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter types: (query) Optional. The types of images to filter by. If not specified, all types are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of images to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of images to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitleImagesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleImages(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleImagesResponse {
+    open class func iMDbAPIServiceListTitleImages(titleId: String,
+                                                  types: [String]? = nil,
+                                                  pageSize: Int? = nil,
+                                                  pageToken: String? = nil,
+                                                  apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleImagesResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListTitleImagesWithRequestBuilder(titleId: titleId, types: types, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -450,12 +556,18 @@ open class TitleAPI {
      - Retrieve the images associated with a specific title.
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter types: (query) Optional. The types of images to filter by. If not specified, all types are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of images to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of images to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleImagesResponse> 
      */
-    open class func iMDbAPIServiceListTitleImagesWithRequestBuilder(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleImagesResponse> {
+    open class func iMDbAPIServiceListTitleImagesWithRequestBuilder(titleId: String,
+                                                                    types: [String]? = nil,
+                                                                    pageSize: Int? = nil,
+                                                                    pageToken: String? = nil,
+                                                                    apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleImagesResponse> {
         var localVariablePath = "/titles/{titleId}/images"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -478,7 +590,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleImagesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -502,7 +619,9 @@ open class TitleAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleParentsGuideResponse> 
      */
-    open class func iMDbAPIServiceListTitleParentsGuideWithRequestBuilder(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleParentsGuideResponse> {
+    open class func iMDbAPIServiceListTitleParentsGuideWithRequestBuilder(titleId: String,
+                                                                          apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleParentsGuideResponse> {
         var localVariablePath = "/titles/{titleId}/parentsGuide"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -520,20 +639,29 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleParentsGuideResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
      List release dates for a title
      
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
-     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.
+     The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitleReleaseDatesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleReleaseDates(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleReleaseDatesResponse {
+    open class func iMDbAPIServiceListTitleReleaseDates(titleId: String,
+                                                        pageSize: Int? = nil,
+                                                        pageToken: String? = nil,
+                                                        apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleReleaseDatesResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListTitleReleaseDatesWithRequestBuilder(titleId: titleId, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -543,12 +671,17 @@ open class TitleAPI {
      - GET /titles/{titleId}/releaseDates
      - Retrieve the release dates associated with a specific title.
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
-     - parameter pageSize: (query) Optional. The maximum number of credits to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of credits to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleReleaseDatesResponse> 
      */
-    open class func iMDbAPIServiceListTitleReleaseDatesWithRequestBuilder(titleId: String, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleReleaseDatesResponse> {
+    open class func iMDbAPIServiceListTitleReleaseDatesWithRequestBuilder(titleId: String,
+                                                                          pageSize: Int? = nil,
+                                                                          pageToken: String? = nil,
+                                                                          apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleReleaseDatesResponse> {
         var localVariablePath = "/titles/{titleId}/releaseDates"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -570,7 +703,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleReleaseDatesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -594,7 +732,9 @@ open class TitleAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleSeasonsResponse> 
      */
-    open class func iMDbAPIServiceListTitleSeasonsWithRequestBuilder(titleId: String, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleSeasonsResponse> {
+    open class func iMDbAPIServiceListTitleSeasonsWithRequestBuilder(titleId: String,
+                                                                     apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleSeasonsResponse> {
         var localVariablePath = "/titles/{titleId}/seasons"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -612,21 +752,32 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleSeasonsResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
      List videos for a title
      
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
-     - parameter types: (query) Optional. The types of videos to filter by. If not specified, all types are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of videos to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter types: (query) Optional. The types of videos to filter by.
+     If not specified, all types are returned. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of videos to return per page. If not specified, a default value will be used.
+     The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitleVideosResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitleVideos(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleVideosResponse {
+    open class func iMDbAPIServiceListTitleVideos(titleId: String,
+                                                  types: [String]? = nil,
+                                                  pageSize: Int? = nil,
+                                                  pageToken: String? = nil,
+                                                  apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitleVideosResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
         return try await iMDbAPIServiceListTitleVideosWithRequestBuilder(titleId: titleId, types: types, pageSize: pageSize, pageToken: pageToken, apiConfiguration: config).execute().body
     }
@@ -637,12 +788,18 @@ open class TitleAPI {
      - Retrieve the videos associated with a specific title.
      - parameter titleId: (path) Required. IMDb title ID in the format \&quot;tt1234567\&quot;. 
      - parameter types: (query) Optional. The types of videos to filter by. If not specified, all types are returned. (optional)
-     - parameter pageSize: (query) Optional. The maximum number of videos to return per page. If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
+     - parameter pageSize: (query) Optional. The maximum number of videos to return per page.
+     If not specified, a default value will be used.  The value must be between 1 and 50. Default is 20. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitleVideosResponse> 
      */
-    open class func iMDbAPIServiceListTitleVideosWithRequestBuilder(titleId: String, types: [String]? = nil, pageSize: Int? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitleVideosResponse> {
+    open class func iMDbAPIServiceListTitleVideosWithRequestBuilder(titleId: String,
+                                                                    types: [String]? = nil,
+                                                                    pageSize: Int? = nil,
+                                                                    pageToken: String? = nil,
+                                                                    apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiListTitleVideosResponse> {
         var localVariablePath = "/titles/{titleId}/videos"
         let titleIdPreEscape = "\(APIHelper.mapValueToPathItem(titleId))"
         let titleIdPostEscape = titleIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -665,7 +822,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitleVideosResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -704,53 +866,144 @@ open class TitleAPI {
     /**
      List titles
      
-     - parameter types: (query) Optional. The type of titles to filter by. If not specified, all types are returned.   - MOVIE: Represents a movie title.  - TV_SERIES: Represents a TV series title.  - TV_MINI_SERIES: Represents a TV mini-series title.  - TV_SPECIAL: Represents a TV special title.  - TV_MOVIE: Represents a TV movie title.  - SHORT: Represents a short title.  - VIDEO: Represents a video title.  - VIDEO_GAME: Represents a video game title. (optional)
-     - parameter genres: (query) Optional. The genres to filter titles by. If not specified, titles from all genres are returned. (optional)
-     - parameter countryCodes: (query) Optional. The ISO 3166-1 alpha-2 country codes to filter titles by. If not specified, titles from all countries are returned. Example: \&quot;US\&quot; for United States, \&quot;GB\&quot; for United Kingdom. (optional)
-     - parameter languageCodes: (query) Optional. The ISO 639-1 or ISO 639-2 language codes to filter titles by. If not specified, titles in all languages are returned. (optional)
+     - parameter types: (query) Optional. The type of titles to filter by. If not specified, all types are returned.
+     - MOVIE: Represents a movie title.
+     - TV_SERIES: Represents a TV series title.
+     - TV_MINI_SERIES: Represents a TV mini-series title.
+     - TV_SPECIAL: Represents a TV special title.
+     - TV_MOVIE: Represents a TV movie title.  - SHORT: Represents a short title.
+     - VIDEO: Represents a video title.
+     - VIDEO_GAME: Represents a video game title. (optional)
+     - parameter genres: (query) Optional. The genres to filter titles by.
+     If not specified, titles from all genres are returned. (optional)
+     - parameter countryCodes: (query) Optional. The ISO 3166-1 alpha-2 country codes to filter titles by.
+     If not specified, titles from all countries are returned. Example: \&quot;US\&quot; for United States, \&quot;GB\&quot; for United Kingdom. (optional)
+     - parameter languageCodes: (query) Optional. The ISO 639-1 or ISO 639-2 language codes to filter titles by.
+     If not specified, titles in all languages are returned. (optional)
      - parameter nameIds: (query) Optional. The IDs of names to filter titles by. (optional)
-     - parameter interestIds: (query) Optional. The IDs of interests to filter titles by. If not specified, titles associated with all interests are returned. (optional)
+     - parameter interestIds: (query) Optional. The IDs of interests to filter titles by.
+     If not specified, titles associated with all interests are returned. (optional)
      - parameter startYear: (query) Optional. The start year for filtering titles. (optional)
      - parameter endYear: (query) Optional. The end year for filtering titles. (optional)
-     - parameter minVoteCount: (query) Optional. The minimum number of votes a title must have to be included. If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000. Default is 0. (optional)
-     - parameter maxVoteCount: (query) Optional. The maximum number of votes a title can have to be included. If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000. (optional)
-     - parameter minAggregateRating: (query) Optional. The minimum rating a title must have to be included. If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
-     - parameter maxAggregateRating: (query) Optional. The maximum rating a title can have to be included. If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
-     - parameter sortBy: (query) Optional. The sorting order for the titles. If not specified, titles are sorted by popularity.   - SORT_BY_POPULARITY: Sort by popularity. This is used to rank titles based on their popularity, which can be influenced by various factors such as viewership, ratings, and cultural impact.  - SORT_BY_RELEASE_DATE: Sort by release date. This is used to rank titles based on their release dates, with newer titles typically appearing before older ones.  - SORT_BY_USER_RATING: Sort by user rating. This is used to rank titles based on the average user rating, which reflects the overall audience reception.  - SORT_BY_USER_RATING_COUNT: Sort by user rating count. This is used to rank titles based on the number of user ratings they have received, which can indicate the level of engagement or popularity among viewers.  - SORT_BY_YEAR: Sort by year. This is used to rank titles based on their release year, with newer titles typically appearing before older ones. (optional)
-     - parameter sortOrder: (query) Optional. The sorting order for the titles. If not specified, titles are sorted in ascending order.   - ASC: Sort in ascending order.  - DESC: Sort in descending order. (optional)
+     - parameter minVoteCount: (query) Optional. The minimum number of votes a title must have to be included.
+     If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000.
+     Default is 0. (optional)
+     - parameter maxVoteCount: (query) Optional. The maximum number of votes a title can have to be included.
+     If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000. (optional)
+     - parameter minAggregateRating: (query) Optional. The minimum rating a title must have to be included.
+     If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
+     - parameter maxAggregateRating: (query) Optional. The maximum rating a title can have to be included.
+     If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
+     - parameter sortBy: (query) Optional. The sorting order for the titles. If not specified, titles are sorted by popularity.
+     - SORT_BY_POPULARITY: Sort by popularity. This is used to rank titles based on their popularity, which can
+     be influenced by various factors such as viewership, ratings, and cultural impact.
+     - SORT_BY_RELEASE_DATE: Sort by release date. This is used to rank titles based on their release dates, with newer titles typically appearing before older ones.
+     - SORT_BY_USER_RATING: Sort by user rating. This is used to rank titles based on the average user rating, which reflects the overall audience reception.
+     - SORT_BY_USER_RATING_COUNT: Sort by user rating count. This is used to rank titles based on the number of user ratings they have received,
+     which can indicate the level of engagement or popularity among viewers.
+     - SORT_BY_YEAR: Sort by year. This is used to rank titles based on their release year, with newer titles typically appearing before older ones. (optional)
+     - parameter sortOrder: (query) Optional. The sorting order for the titles. If not specified, titles are sorted in ascending order.
+     - ASC: Sort in ascending order.
+     - DESC: Sort in descending order. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: ImdbapiListTitlesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitles(types: [Types_iMDbAPIServiceListTitles]? = nil, genres: [String]? = nil, countryCodes: [String]? = nil, languageCodes: [String]? = nil, nameIds: [String]? = nil, interestIds: [String]? = nil, startYear: Int? = nil, endYear: Int? = nil, minVoteCount: Int? = nil, maxVoteCount: Int? = nil, minAggregateRating: Float? = nil, maxAggregateRating: Float? = nil, sortBy: SortBy_iMDbAPIServiceListTitles? = nil, sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitlesResponse {
+    open class func iMDbAPIServiceListTitles(types: [Types_iMDbAPIServiceListTitles]? = nil,
+                                             genres: [String]? = nil,
+                                             countryCodes: [String]? = nil,
+                                             languageCodes: [String]? = nil,
+                                             nameIds: [String]? = nil,
+                                             interestIds: [String]? = nil,
+                                             startYear: Int? = nil,
+                                             endYear: Int? = nil,
+                                             minVoteCount: Int? = nil,
+                                             maxVoteCount: Int? = nil,
+                                             minAggregateRating: Float? = nil,
+                                             maxAggregateRating: Float? = nil,
+                                             sortBy: SortBy_iMDbAPIServiceListTitles? = nil,
+                                             sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil,
+                                             pageToken: String? = nil,
+                                             apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitlesResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
-        return try await iMDbAPIServiceListTitlesWithRequestBuilder(types: types, genres: genres, countryCodes: countryCodes, languageCodes: languageCodes, nameIds: nameIds, interestIds: interestIds, startYear: startYear, endYear: endYear, minVoteCount: minVoteCount, maxVoteCount: maxVoteCount, minAggregateRating: minAggregateRating, maxAggregateRating: maxAggregateRating, sortBy: sortBy, sortOrder: sortOrder, pageToken: pageToken, apiConfiguration: config).execute().body
+        return try await iMDbAPIServiceListTitlesWithRequestBuilder(types: types,
+                                                                    genres: genres,
+                                                                    countryCodes: countryCodes,
+                                                                    languageCodes: languageCodes,
+                                                                    nameIds: nameIds,
+                                                                    interestIds: interestIds,
+                                                                    startYear: startYear,
+                                                                    endYear: endYear,
+                                                                    minVoteCount: minVoteCount,
+                                                                    maxVoteCount: maxVoteCount,
+                                                                    minAggregateRating: minAggregateRating,
+                                                                    maxAggregateRating: maxAggregateRating,
+                                                                    sortBy: sortBy,
+                                                                    sortOrder: sortOrder,
+                                                                    pageToken: pageToken,
+                                                                    apiConfiguration: config).execute().body
     }
 
     /**
      List titles
      - GET /titles
      - Retrieve a list of titles with optional filters.
-     - parameter types: (query) Optional. The type of titles to filter by. If not specified, all types are returned.   - MOVIE: Represents a movie title.  - TV_SERIES: Represents a TV series title.  - TV_MINI_SERIES: Represents a TV mini-series title.  - TV_SPECIAL: Represents a TV special title.  - TV_MOVIE: Represents a TV movie title.  - SHORT: Represents a short title.  - VIDEO: Represents a video title.  - VIDEO_GAME: Represents a video game title. (optional)
+     - parameter types: (query) Optional. The type of titles to filter by. If not specified, all types are returned.
+     - MOVIE: Represents a movie title.
+     - TV_SERIES: Represents a TV series title.
+     - TV_MINI_SERIES: Represents a TV mini-series title.
+     - TV_SPECIAL: Represents a TV special title.
+     - TV_MOVIE: Represents a TV movie title.
+     - SHORT: Represents a short title.
+     - VIDEO: Represents a video title.
+     - VIDEO_GAME: Represents a video game title. (optional)
      - parameter genres: (query) Optional. The genres to filter titles by. If not specified, titles from all genres are returned. (optional)
-     - parameter countryCodes: (query) Optional. The ISO 3166-1 alpha-2 country codes to filter titles by. If not specified, titles from all countries are returned. Example: \&quot;US\&quot; for United States, \&quot;GB\&quot; for United Kingdom. (optional)
+     - parameter countryCodes: (query) Optional. The ISO 3166-1 alpha-2 country codes to filter titles by.
+     If not specified, titles from all countries are returned. Example: \&quot;US\&quot; for United States, \&quot;GB\&quot; for United Kingdom. (optional)
      - parameter languageCodes: (query) Optional. The ISO 639-1 or ISO 639-2 language codes to filter titles by. If not specified, titles in all languages are returned. (optional)
      - parameter nameIds: (query) Optional. The IDs of names to filter titles by. (optional)
      - parameter interestIds: (query) Optional. The IDs of interests to filter titles by. If not specified, titles associated with all interests are returned. (optional)
      - parameter startYear: (query) Optional. The start year for filtering titles. (optional)
      - parameter endYear: (query) Optional. The end year for filtering titles. (optional)
-     - parameter minVoteCount: (query) Optional. The minimum number of votes a title must have to be included. If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000. Default is 0. (optional)
-     - parameter maxVoteCount: (query) Optional. The maximum number of votes a title can have to be included. If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000. (optional)
-     - parameter minAggregateRating: (query) Optional. The minimum rating a title must have to be included. If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
-     - parameter maxAggregateRating: (query) Optional. The maximum rating a title can have to be included. If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
-     - parameter sortBy: (query) Optional. The sorting order for the titles. If not specified, titles are sorted by popularity.   - SORT_BY_POPULARITY: Sort by popularity. This is used to rank titles based on their popularity, which can be influenced by various factors such as viewership, ratings, and cultural impact.  - SORT_BY_RELEASE_DATE: Sort by release date. This is used to rank titles based on their release dates, with newer titles typically appearing before older ones.  - SORT_BY_USER_RATING: Sort by user rating. This is used to rank titles based on the average user rating, which reflects the overall audience reception.  - SORT_BY_USER_RATING_COUNT: Sort by user rating count. This is used to rank titles based on the number of user ratings they have received, which can indicate the level of engagement or popularity among viewers.  - SORT_BY_YEAR: Sort by year. This is used to rank titles based on their release year, with newer titles typically appearing before older ones. (optional)
-     - parameter sortOrder: (query) Optional. The sorting order for the titles. If not specified, titles are sorted in ascending order.   - ASC: Sort in ascending order.  - DESC: Sort in descending order. (optional)
+     - parameter minVoteCount: (query) Optional. The minimum number of votes a title must have to be included.
+     If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000. Default is 0. (optional)
+     - parameter maxVoteCount: (query) Optional. The maximum number of votes a title can have to be included.
+     If not specified, titles with any number of votes are included. The value must be between 0 and 1,000,000,000. (optional)
+     - parameter minAggregateRating: (query) Optional. The minimum rating a title must have to be included.
+     If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
+     - parameter maxAggregateRating: (query) Optional. The maximum rating a title can have to be included.
+     If not specified, titles with any rating are included. The value must be between 0.0 and 10.0. (optional)
+     - parameter sortBy: (query) Optional. The sorting order for the titles. If not specified, titles are sorted by popularity.
+     - SORT_BY_POPULARITY: Sort by popularity. This is used to rank titles based on their popularity, which can be influenced by various factors such as viewership, ratings, and cultural impact.
+     - SORT_BY_RELEASE_DATE: Sort by release date. This is used to rank titles based on their release dates, with newer titles typically appearing before older ones.
+     - SORT_BY_USER_RATING: Sort by user rating. This is used to rank titles based on the average user rating, which reflects the overall audience reception.
+     - SORT_BY_USER_RATING_COUNT: Sort by user rating count. This is used to rank titles based on the number of user ratings
+     they have received, which can indicate the level of engagement or popularity among viewers.
+     - SORT_BY_YEAR: Sort by year. This is used to rank titles based on their release year, with newer titles typically appearing before older ones. (optional)
+     - parameter sortOrder: (query) Optional. The sorting order for the titles. If not specified, titles are sorted in ascending order.
+     - ASC: Sort in ascending order.
+     - DESC: Sort in descending order. (optional)
      - parameter pageToken: (query) Optional. Token for pagination, if applicable. (optional)
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiListTitlesResponse> 
      */
-    open class func iMDbAPIServiceListTitlesWithRequestBuilder(types: [Types_iMDbAPIServiceListTitles]? = nil, genres: [String]? = nil, countryCodes: [String]? = nil, languageCodes: [String]? = nil, nameIds: [String]? = nil, interestIds: [String]? = nil, startYear: Int? = nil, endYear: Int? = nil, minVoteCount: Int? = nil, maxVoteCount: Int? = nil, minAggregateRating: Float? = nil, maxAggregateRating: Float? = nil, sortBy: SortBy_iMDbAPIServiceListTitles? = nil, sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil, pageToken: String? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitlesResponse> {
+    open class func iMDbAPIServiceListTitlesWithRequestBuilder(types: [Types_iMDbAPIServiceListTitles]? = nil,
+                                                               genres: [String]? = nil,
+                                                               countryCodes: [String]? = nil,
+                                                               languageCodes: [String]? = nil,
+                                                               nameIds: [String]? = nil,
+                                                               interestIds: [String]? = nil,
+                                                               startYear: Int? = nil,
+                                                               endYear: Int? = nil,
+                                                               minVoteCount: Int? = nil,
+                                                               maxVoteCount: Int? = nil,
+                                                               minAggregateRating: Float? = nil,
+                                                               maxAggregateRating: Float? = nil,
+                                                               sortBy: SortBy_iMDbAPIServiceListTitles? = nil,
+                                                               sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil,
+                                                               pageToken: String? = nil,
+                                                               apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitlesResponse> {
         let localVariablePath = "/titles"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -782,7 +1035,12 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiListTitlesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -808,7 +1066,10 @@ open class TitleAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<ImdbapiSearchTitlesResponse> 
      */
-    open class func iMDbAPIServiceSearchTitlesWithRequestBuilder(query: String, limit: Int? = nil, apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiSearchTitlesResponse> {
+    open class func iMDbAPIServiceSearchTitlesWithRequestBuilder(query: String,
+                                                                 limit: Int? = nil,
+                                                                 apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared)
+    -> RequestBuilder<ImdbapiSearchTitlesResponse> {
         let localVariablePath = "/search/titles"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -827,6 +1088,11 @@ open class TitleAPI {
 
         let localVariableRequestBuilder: RequestBuilder<ImdbapiSearchTitlesResponse>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+        return localVariableRequestBuilder.init(method: "GET",
+                                                URLString: (localVariableUrlComponents?.string ?? localVariableURLString),
+                                                parameters: localVariableParameters,
+                                                headers: localVariableHeaderParameters,
+                                                requiresAuthentication: false,
+                                                apiConfiguration: apiConfiguration)
     }
 }

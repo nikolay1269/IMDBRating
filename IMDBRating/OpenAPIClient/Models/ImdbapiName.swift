@@ -19,7 +19,8 @@ public struct ImdbapiName: Sendable, Codable, ParameterConvertible, Hashable {
     public var primaryImage: ImdbapiImage?
     /** A list of primary professions associated with the person, such as \"Actor\", \"Director\", \"Producer\", etc. */
     public var primaryProfessions: [String]?
-    /** A brief biography or description of the person, which may include their career highlights, achievements, and other relevant information. */
+    /** A brief biography or description of the person, which may include their career highlights,
+     achievements, and other relevant information. */
     public var biography: String?
     /** The height of the person in centimeters. */
     public var heightCm: Int?
@@ -35,7 +36,20 @@ public struct ImdbapiName: Sendable, Codable, ParameterConvertible, Hashable {
     public var deathReason: String?
     public var meterRanking: ImdbapiNameMeterRanking?
 
-    public init(id: String? = nil, displayName: String? = nil, alternativeNames: [String]? = nil, primaryImage: ImdbapiImage? = nil, primaryProfessions: [String]? = nil, biography: String? = nil, heightCm: Int? = nil, birthName: String? = nil, birthDate: ImdbapiPrecisionDate? = nil, birthLocation: String? = nil, deathDate: ImdbapiPrecisionDate? = nil, deathLocation: String? = nil, deathReason: String? = nil, meterRanking: ImdbapiNameMeterRanking? = nil) {
+    public init(id: String? = nil,
+                displayName: String? = nil,
+                alternativeNames: [String]? = nil,
+                primaryImage: ImdbapiImage? = nil,
+                primaryProfessions: [String]? = nil,
+                biography: String? = nil,
+                heightCm: Int? = nil,
+                birthName: String? = nil,
+                birthDate: ImdbapiPrecisionDate? = nil,
+                birthLocation: String? = nil,
+                deathDate: ImdbapiPrecisionDate? = nil,
+                deathLocation: String? = nil,
+                deathReason: String? = nil,
+                meterRanking: ImdbapiNameMeterRanking? = nil) {
         self.id = id
         self.displayName = displayName
         self.alternativeNames = alternativeNames

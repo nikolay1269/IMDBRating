@@ -7,7 +7,8 @@
 
 import Foundation
 
-/** The NameRelationship message represents a relationship between two names in the IMDb database, such as family members, spouses, parents, children, etc. Each relationship includes the related name, the type of relationship, and any additional attributes associated with the relationship. */
+/** The NameRelationship message represents a relationship between two names in the IMDb database, such as family members, spouses, parents, children, etc.
+ Each relationship includes the related name, the type of relationship, and any additional attributes associated with the relationship. */
 public struct ImdbapiNameRelationship: Sendable, Codable, ParameterConvertible, Hashable {
 
     public var name: ImdbapiName?

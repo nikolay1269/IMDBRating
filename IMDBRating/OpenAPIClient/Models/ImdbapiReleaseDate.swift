@@ -12,7 +12,8 @@ public struct ImdbapiReleaseDate: Sendable, Codable, ParameterConvertible, Hasha
 
     public var country: ImdbapiCountry?
     public var releaseDate: ImdbapiPrecisionDate?
-    /** The attributes field contains additional attributes related to the release date.  These attributes can include information such as the format of the release (e.g., \"Theatrical\", \"DVD\", \"Blu-ray\"). */
+    /** The attributes field contains additional attributes related to the release date.
+     These attributes can include information such as the format of the release (e.g., \"Theatrical\", \"DVD\", \"Blu-ray\"). */
     public var attributes: [String]?
 
     public init(country: ImdbapiCountry? = nil, releaseDate: ImdbapiPrecisionDate? = nil, attributes: [String]? = nil) {
