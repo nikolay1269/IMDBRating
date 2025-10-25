@@ -537,7 +537,7 @@ extension TitleAPI {
     /**
      * enum for parameter types
      */
-    public enum Types_iMDbAPIServiceListTitles: String, Sendable, CaseIterable {
+    public enum TypesiMDbAPIServiceListTitles: String, Sendable, CaseIterable {
         case movie = "MOVIE"
         case tvSeries = "TV_SERIES"
         case tvMiniSeries = "TV_MINI_SERIES"
@@ -551,7 +551,7 @@ extension TitleAPI {
     /**
      * enum for parameter sortBy
      */
-    public enum SortBy_iMDbAPIServiceListTitles: String, Sendable, CaseIterable {
+    public enum SortByiMDbAPIServiceListTitles: String, Sendable, CaseIterable {
         case sortByPopularity = "SORT_BY_POPULARITY"
         case sortByReleaseDate = "SORT_BY_RELEASE_DATE"
         case sortByUserRating = "SORT_BY_USER_RATING"
@@ -559,13 +559,13 @@ extension TitleAPI {
         case sortByYear = "SORT_BY_YEAR"
     }
     
-    public enum SortOrder_iMDbAPIServiceListTitles: String, Sendable, CaseIterable {
+    public enum SortOrderiMDbAPIServiceListTitles: String, Sendable, CaseIterable {
         case asc = "ASC"
         case desc = "DESC"
     }
     
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func iMDbAPIServiceListTitles(types: [Types_iMDbAPIServiceListTitles]? = nil,
+    open class func iMDbAPIServiceListTitles(types: [TypesiMDbAPIServiceListTitles]? = nil,
                                              genres: [String]? = nil,
                                              countryCodes: [String]? = nil,
                                              languageCodes: [String]? = nil,
@@ -577,8 +577,8 @@ extension TitleAPI {
                                              maxVoteCount: Int? = nil,
                                              minAggregateRating: Float? = nil,
                                              maxAggregateRating: Float? = nil,
-                                             sortBy: SortBy_iMDbAPIServiceListTitles? = nil,
-                                             sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil,
+                                             sortBy: SortByiMDbAPIServiceListTitles? = nil,
+                                             sortOrder: SortOrderiMDbAPIServiceListTitles? = nil,
                                              pageToken: String? = nil,
                                              apiConfiguration: OpenAPIClientAPIConfiguration? = nil) async throws(ErrorResponse) -> ImdbapiListTitlesResponse {
         let config = apiConfiguration ?? OpenAPIClientAPIConfiguration.shared
@@ -600,7 +600,7 @@ extension TitleAPI {
                                                                     apiConfiguration: config).execute().body
     }
     
-    open class func iMDbAPIServiceListTitlesWithRequestBuilder(types: [Types_iMDbAPIServiceListTitles]? = nil,
+    open class func iMDbAPIServiceListTitlesWithRequestBuilder(types: [TypesiMDbAPIServiceListTitles]? = nil,
                                                                genres: [String]? = nil,
                                                                countryCodes: [String]? = nil,
                                                                languageCodes: [String]? = nil,
@@ -612,8 +612,8 @@ extension TitleAPI {
                                                                maxVoteCount: Int? = nil,
                                                                minAggregateRating: Float? = nil,
                                                                maxAggregateRating: Float? = nil,
-                                                               sortBy: SortBy_iMDbAPIServiceListTitles? = nil,
-                                                               sortOrder: SortOrder_iMDbAPIServiceListTitles? = nil,
+                                                               sortBy: SortByiMDbAPIServiceListTitles? = nil,
+                                                               sortOrder: SortOrderiMDbAPIServiceListTitles? = nil,
                                                                pageToken: String? = nil,
                                                                apiConfiguration: OpenAPIClientAPIConfiguration = OpenAPIClientAPIConfiguration.shared) -> RequestBuilder<ImdbapiListTitlesResponse> {
         let localVariablePath = "/titles"
