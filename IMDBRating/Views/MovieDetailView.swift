@@ -37,28 +37,15 @@ struct MovieDetailView: View {
                 Text(genre).foregroundColor(.secondary)
             }
         }
-        if (viewModel.loadedTitle?.directors?.count ?? 0) > 0 {
-            HStack {
-                Text("Directors: ")
-                ForEach(viewModel.loadedTitle?.directors ?? [], id: \.self) { director in
-                    Text(director.displayName ?? "").foregroundColor(.blue)
-                }
+        VStack(alignment: .leading) {
+            if (viewModel.loadedTitle?.directors?.count ?? 0) > 0 {
+                Text(viewModel.directorsText()).frame(alignment: .leading)
             }
-        }
-        if (viewModel.loadedTitle?.writers?.count ?? 0) > 0 {
-            HStack {
-                Text("Writers: ")
-                ForEach(viewModel.loadedTitle?.writers ?? [], id: \.self) { writer in
-                    Text(writer.displayName ?? "").foregroundColor(.blue)
-                }
+            if (viewModel.loadedTitle?.writers?.count ?? 0) > 0 {
+                Text(viewModel.writersText()).frame(alignment: .leading)
             }
-        }
-        if (viewModel.loadedTitle?.stars?.count ?? 0) > 0 {
-            HStack {
-                Text("Starts: ")
-                ForEach(viewModel.loadedTitle?.stars ?? [], id: \.self) { star in
-                    Text(star.displayName ?? "").foregroundColor(.blue)
-                }
+            if (viewModel.loadedTitle?.stars?.count ?? 0) > 0 {
+                Text(viewModel.starsText()).frame(alignment: .leading)
             }
         }
     }
